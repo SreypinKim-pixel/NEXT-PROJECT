@@ -55,10 +55,10 @@ export default function EcommerceProductCard({ product }: { product: ProductInfe
 
   return (
     <div className="w-full">
-      <Card className="w-full max-w-sm rounded-3xl overflow-hidden p-0 gap-0 border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group/card">
+      <Card className="w-full max-w-sm rounded-3xl overflow-hidden p-0 gap-0 border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group/card dark:border-slate-700 dark:bg-slate-900">
 
         {/* ── Image zone ── */}
-        <div className="relative overflow-hidden h-72 bg-gradient-to-b from-slate-50 to-slate-100">
+        <div className="relative overflow-hidden h-72 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
           <Link href={`/product/${product.id}`} className="absolute inset-0" aria-label={`View ${product.title}`}>
           <Image
             src={product.image}
@@ -119,7 +119,7 @@ export default function EcommerceProductCard({ product }: { product: ProductInfe
           <button
             type="button"
             onClick={addToCart}
-            className="flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border border-slate-300 px-2 text-xs font-semibold transition hover:bg-slate-100"
+            className="flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border border-slate-300 px-2 text-xs font-semibold transition hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-800"
           >
             <ShoppingBag className="size-4 shrink-0" />
             {inBag ? "Added to cart" : "Add to cart"}
@@ -132,18 +132,18 @@ export default function EcommerceProductCard({ product }: { product: ProductInfe
             Buy now
           </button>
         </CardFooter>
-        {cartError && <p role="alert" className="px-4 pb-4 text-sm text-red-600">{cartError}</p>}
-        <dialog ref={purchaseDialog} className="fixed inset-0 m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-slate-200 bg-white p-6 text-slate-950 shadow-xl backdrop:bg-black/50" aria-labelledby={`purchase-${product.id}`}>
+        {cartError && <p role="alert" className="px-4 pb-4 text-sm text-red-600 dark:text-red-400">{cartError}</p>}
+        <dialog ref={purchaseDialog} className="fixed inset-0 m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-slate-200 bg-white p-6 text-slate-950 shadow-xl backdrop:bg-black/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-labelledby={`purchase-${product.id}`}>
           <h2 id={`purchase-${product.id}`} className="text-xl font-bold">Buy now</h2>
           <p className="mt-4 font-semibold">{product.title}</p>
           <p className="mt-2 text-sm">Size: {selectedSize}</p>
           <p className="mt-3 text-2xl font-bold">${product.price.toFixed(2)}</p>
-          <p className="mt-4 text-sm text-slate-600">Checkout is not connected yet. You can save this item to your cart.</p>
+          <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">Checkout is not connected yet. You can save this item to your cart.</p>
           <div className="mt-6 flex gap-2">
             <button type="button" onClick={addToCart} className="flex-1 rounded-xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white">{inBag ? "Added to cart" : "Add to cart"}</button>
-            <button type="button" onClick={() => purchaseDialog.current?.close()} className="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold">Close</button>
+            <button type="button" onClick={() => purchaseDialog.current?.close()} className="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold dark:border-slate-600">Close</button>
           </div>
-          {cartError && <p role="alert" className="mt-3 text-sm text-red-600">{cartError}</p>}
+          {cartError && <p role="alert" className="mt-3 text-sm text-red-600 dark:text-red-400">{cartError}</p>}
         </dialog>
 
       </Card>

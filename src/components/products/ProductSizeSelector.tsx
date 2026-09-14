@@ -25,7 +25,7 @@ export default function ProductSizeSelector({ onSizeChange }: { onSizeChange?: (
               "h-10 flex-1 rounded-lg border text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
               selectedSize === size
                 ? "border-slate-950 bg-slate-950 text-white"
-                : "border-slate-300 bg-white text-slate-700 hover:border-slate-950"
+                : "border-slate-300 bg-white text-slate-700 hover:border-slate-950 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300"
             )}
           >
             {size}

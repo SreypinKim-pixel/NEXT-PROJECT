@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">About Nova</p>
-      <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-6xl">Good design should make everyday life feel easier.</h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">សួស្ដីអ្នកទាំងអស់គ្នា។ We built Nova as a friendly place to discover useful products, understand them quickly, and move through every page with confidence.</p>
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">About Nova</p>
+      <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-6xl dark:text-slate-100">Good design should make everyday life feel easier.</h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">សួស្ដីអ្នកទាំងអស់គ្នា។ We built Nova as a friendly place to discover useful products, understand them quickly, and move through every page with confidence.</p>
 
       <div className="mt-14 grid gap-4 md:grid-cols-3">
         {[
@@ -37,10 +37,10 @@ export default function AboutPage() {
           { icon: ShieldCheck, title: "Made with care", text: "Thoughtful details and reliable patterns keep the experience predictable." },
           { icon: Heart, title: "People first", text: "Comfortable spacing, readable type, and navigation that works on every screen." },
         ].map(({ icon: Icon, title, text }) => (
-          <article key={title} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+          <article key={title} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm dark:border-slate-700 dark:bg-slate-900">
             <span className="grid size-11 place-items-center rounded-2xl bg-amber-100 text-amber-800"><Icon className="size-5" /></span>
             <h2 className="mt-6 text-xl font-bold">{title}</h2>
-            <p className="mt-2 leading-7 text-slate-600">{text}</p>
+            <p className="mt-2 leading-7 text-slate-600 dark:text-slate-400">{text}</p>
           </article>
         ))}
       </div>

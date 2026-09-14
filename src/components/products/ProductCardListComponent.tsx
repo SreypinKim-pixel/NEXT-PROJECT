@@ -35,12 +35,12 @@ export default function ProductCardListComponent() {
   }, []);
 
   if (loading) return <div className="mt-10"><CardGridSkeleton /></div>;
-  if (error) return <p className="mt-10 text-red-600" role="alert">{error}</p>;
+  if (error) return <p className="mt-10 text-red-600 dark:text-red-400" role="alert">{error}</p>;
   if (products.length === 0) return <p className="mt-10">No products available.</p>;
 
   return (
     <div className="mt-10">
-      <p className="text-sm text-slate-600">{products.length} {products.length === 1 ? "product" : "products"}</p>
+      <p className="text-sm text-slate-600 dark:text-slate-400">{products.length} {products.length === 1 ? "product" : "products"}</p>
       <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => <EcommerceProductCard key={product.id} product={product} />)}
       </div>

@@ -7,7 +7,8 @@ import * as React from "react"
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/sonner"
 import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -117,11 +118,13 @@ export function RegisterFormComponent() {
   }
 
   return (
-    <Card className="w-full sm:max-w-md">
+    <Card className="w-full rounded-[2rem] border border-border bg-card text-card-foreground shadow-sm ring-0 [--card-spacing:--spacing(6)] sm:[--card-spacing:--spacing(8)]">
       <Toaster />
 
-      <CardHeader>
-        <CardTitle>Register</CardTitle>
+      <CardHeader className="gap-3">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">Your account</p>
+        <CardTitle><h1 className="text-3xl font-black tracking-[-0.04em] sm:text-4xl">Make yourself at home.</h1></CardTitle>
+        <p className="text-sm leading-6 text-slate-600 dark:text-slate-400">Create your account and start exploring the collection.</p>
       </CardHeader>
 
       <CardContent>
@@ -129,7 +132,7 @@ export function RegisterFormComponent() {
           id="form-rhf-register"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <FieldGroup>
+          <FieldGroup className="gap-5">
             <Controller
               name="fullname"
               control={form.control}
@@ -137,6 +140,7 @@ export function RegisterFormComponent() {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="register-fullname">Full name</FieldLabel>
                   <Input
+                    className="h-12 rounded-xl border-slate-300 bg-slate-50 px-4 text-slate-950 placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-amber-400/25 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
                     {...field}
                     id="register-fullname"
                     placeholder="Enter your full name"
@@ -157,6 +161,7 @@ export function RegisterFormComponent() {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="register-username">Username</FieldLabel>
                   <Input
+                    className="h-12 rounded-xl border-slate-300 bg-slate-50 px-4 text-slate-950 placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-amber-400/25 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
                     {...field}
                     id="register-username"
                     placeholder="Choose a username"
@@ -184,11 +189,12 @@ export function RegisterFormComponent() {
                   </FieldLabel>
 
                   <Input
+                    className="h-12 rounded-xl border-slate-300 bg-slate-50 px-4 text-slate-950 placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-amber-400/25 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
                     {...field}
                     type="email"
                     id="register-email"
                     aria-invalid={fieldState.invalid}
-                    placeholder="koko@gmail.com"
+                    placeholder="you@example.com"
                     autoComplete="email"
                   />
 
@@ -210,11 +216,12 @@ export function RegisterFormComponent() {
                   </FieldLabel>
 
                   <Input
+                    className="h-12 rounded-xl border-slate-300 bg-slate-50 px-4 text-slate-950 placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-amber-400/25 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
                     {...field}
                     type="password"
                     id="register-password"
                     aria-invalid={fieldState.invalid}
-                    placeholder="QWER!@#$"
+                    placeholder="Create a password"
                     autoComplete="new-password"
                   />
 
@@ -236,6 +243,7 @@ export function RegisterFormComponent() {
                   </FieldLabel>
 
                   <Input
+                    className="h-12 rounded-xl border-slate-300 bg-slate-50 px-4 text-slate-950 placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-amber-400/25 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
                     {...field}
                     type="password"
                     id="register-confirm-password"
@@ -255,19 +263,19 @@ export function RegisterFormComponent() {
         </form>
       </CardContent>
 
-      <CardFooter className="flex-col gap-4">
+      <CardFooter className="flex-col gap-5 border-border bg-muted/50">
         <Field orientation="horizontal">
           <Button
             type="submit"
             form="form-rhf-register"
-            className="w-full"
+            className="h-12 w-full rounded-full bg-amber-400 text-sm font-bold text-slate-950 shadow-none hover:bg-amber-300 focus-visible:ring-amber-400/40"
           >
             Register
           </Button>
         </Field>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-center text-sm text-slate-600 dark:text-slate-400">
           Already have an account?{" "}
-          <Link href="/login" className="font-medium text-primary underline-offset-4 hover:underline">
+          <Link href="/login" className="font-bold text-slate-950 underline decoration-amber-400 decoration-2 underline-offset-4 hover:text-amber-700 dark:text-slate-100">
             Login
           </Link>
         </p>

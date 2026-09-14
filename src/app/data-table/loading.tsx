@@ -19,7 +19,7 @@ export default function Loading() {
               ))}
             </div>
             {Array.from({ length: 10 }, (_, index) => (
-              <div key={index} className="grid grid-cols-[32px_48px_64px_2fr_1fr_1fr_64px_32px] items-center gap-4 border-t border-slate-300 px-4 py-3">
+              <div key={index} className="grid grid-cols-[32px_48px_64px_2fr_1fr_1fr_64px_32px] items-center gap-4 border-t border-slate-300 px-4 py-3 dark:border-slate-600">
                 <Skeleton className="size-4" />
                 <Skeleton className="h-4 w-8" />
                 <Skeleton className="size-12" />

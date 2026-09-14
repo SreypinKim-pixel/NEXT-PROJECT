@@ -1,9 +1,10 @@
 import { LoginFormComponent } from "@/components/auth/LoginFormComponent";
+import AuthPageShell from "@/components/auth/AuthPageShell";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center p-6">
+    <AuthPageShell>
       <LoginFormComponent />
-    </main>
+    </AuthPageShell>
   );
 }

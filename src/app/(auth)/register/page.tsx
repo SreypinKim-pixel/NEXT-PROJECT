@@ -1,9 +1,10 @@
 import { RegisterFormComponent } from "@/components/auth/RegisterFormComponent";
+import AuthPageShell from "@/components/auth/AuthPageShell";
 
 export default function RegisterPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center p-6">
+    <AuthPageShell>
       <RegisterFormComponent />
-    </main>
+    </AuthPageShell>
   );
 }

@@ -36,11 +36,15 @@ export async function generateMetadata(
 
     const image = "image" in product && typeof product.image === "string"
       && /^https?:\/\//.test(product.image) ? product.image : undefined;
+    const description = "description" in product && typeof product.description === "string"
+      ? product.description : undefined;
 
     return {
       title: product.title,
+      description,
       openGraph: {
         title: product.title,
+        description,
         images: image ? [image, ...previousImages] : previousImages,
       },
     };

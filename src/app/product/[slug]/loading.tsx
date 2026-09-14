@@ -6,7 +6,7 @@ export default function Loading() {
       <span className="sr-only">Loading product details…</span>
       <div aria-hidden="true">
         <Skeleton className="h-11 w-44 rounded-full" />
-        <div className="mt-8 grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white lg:grid-cols-2">
+        <div className="mt-8 grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white lg:grid-cols-2 dark:border-slate-700 dark:bg-slate-900">
           <Skeleton className="min-h-[420px] rounded-none" />
           <div className="space-y-7 p-8 sm:p-12">
             <Skeleton className="h-4 w-24" />

@@ -64,8 +64,8 @@ export function DataTable({ data }: { data: Product[] }) {
         </Menu.Portal>
       </Menu.Root>
     </div>
-    <div className="overflow-x-auto rounded-xl border-2 border-slate-400 bg-white shadow-sm">
-      <table className="w-full text-left text-sm font-medium text-slate-950">
+    <div className="overflow-x-auto rounded-xl border-2 border-slate-400 bg-white shadow-sm dark:bg-slate-900">
+      <table className="w-full text-left text-sm font-medium text-slate-950 dark:text-slate-100">
         <caption className="sr-only">Products with IDs, images, titles, prices, categories, and ratings</caption>
         <thead className="bg-slate-900 text-white">
           {table.getHeaderGroups().map((group) => (
@@ -86,7 +86,7 @@ export function DataTable({ data }: { data: Product[] }) {
         <tbody>
           {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className="border-t border-slate-300 odd:bg-white even:bg-slate-100 hover:bg-slate-200">
+              <tr key={row.id} className="border-t border-slate-300 odd:bg-white even:bg-slate-100 hover:bg-slate-200 dark:border-slate-600">
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="max-w-md break-words px-4 py-3">
                     <table.FlexRender cell={cell} />
@@ -95,7 +95,7 @@ export function DataTable({ data }: { data: Product[] }) {
               </tr>
             ))
           ) : (
-            <tr><td colSpan={table.getVisibleLeafColumns().length} className="px-4 py-10 text-center text-slate-700">No products found.</td></tr>
+            <tr><td colSpan={table.getVisibleLeafColumns().length} className="px-4 py-10 text-center text-slate-700 dark:text-slate-300">No products found.</td></tr>
           )}
           
         </tbody>
