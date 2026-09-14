@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   ),
   title: "NOVA — Everyday essentials",
   description: "A simple, modern storefront for everyday essentials.",
+  icons: {
+    icon: [{ url: "/Thumbnail.png?v=2", type: "image/png", sizes: "any" }],
+    shortcut: "/Thumbnail.png?v=2",
+    apple: "/Thumbnail.png?v=2",
+  },
   openGraph: {
     images: [
       {
