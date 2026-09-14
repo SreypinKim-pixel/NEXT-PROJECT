@@ -1,0 +1,5 @@
+- [x] Analyze codebase, env, API patterns, and Next.js auth docs
+- [ ] Add loginToApi client helper + env trim fix to src/lib/api.ts
+- [ ] Create src/app/api/auth/login/route.ts proxy route (HttpOnly cookie)
+- [ ] Wire LoginFormComponent onSubmit to loginToApi with loading/error/success
+- [ ] Verify with lint/build
