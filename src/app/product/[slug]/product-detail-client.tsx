@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import useSWR from "swr";
 import Loading from "./loading";
 import ProductNotFound from "../not-found";
@@ -36,6 +37,12 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
     fetchProduct,
     { shouldRetryOnError: false }
   );
+
+  useEffect(() => {
+    if (product?.title) {
+      document.title = `${product.title} | Tos Tinh`;
+    }
+  }, [product?.title]);
 
   if (isLoading) return <Loading />;
   if (error) return (

@@ -30,7 +30,10 @@ export const metadata: Metadata = {
         ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
         : "http://localhost:3000")
   ),
-  title: "NOVA — Everyday essentials",
+  title: {
+    template: "%s | Tos Tinh",
+    default: "Home",
+  },
   description: "A simple, modern storefront for everyday essentials.",
   icons: {
     icon: [{ url: "/Thumbnail.png?v=2", type: "image/png", sizes: "any" }],
