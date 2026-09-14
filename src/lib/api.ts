@@ -1,9 +1,6 @@
 export function getProductsApiUrl() {
-  const apiUrl = process.env.NEXT_PUBLIC_FAKESTORE_API;
-
-  if (!apiUrl) {
-    throw new Error("NEXT_PUBLIC_FAKESTORE_API environment variable is not configured");
-  }
+  const apiUrl = process.env.NEXT_PUBLIC_FAKESTORE_API?.trim() ||
+    "https://fakestoreapi.com/products";
 
   // Trim whitespace that .env files may sneak in (e.g. `KEY= value`).
   return apiUrl.trim().replace(/\/+$/, "");
